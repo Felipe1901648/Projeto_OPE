@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/images/lapis.png" />
+    <title>Alteração de Fornecedor </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <style>
+        body{background-color:#363636;}
+    </style>
+</head>
+<body>
+    <h1 align='center' class='text-white'>Editar Fornecedor: {{usuarios.nome}}</h1>
+
+    <table class="table table-dark" >
+        <form action="/edit_fornecedores/{{usuarios.id}}" method="POST">
+            <tr>
+                <td>Razão social</td>
+                <td><input type="text" name="empresa" />
+                </td>
+            </tr>
+            <tr>
+                <td>Endereço </td> 
+                <td><input type="text" name="endereco" id="complemento"  />
+                </td>
+            </tr>
+            <tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="email" id="email"  />
+                </td>
+            </tr>
+            <tr>
+                <td>Telefone</td>
+                <td><input type="text" name="contato" id="email"  />
+                </td>
+            </tr>
+            <tr>
+                <td>Prazo médio de entrega</td>
+                <td><input type="text" name="entrega" id="email"  />
+                </td>
+            </tr>        
+            <br />
+            <tr>
+                <th colspan="2">
+                    <input type='button' value="Voltar" class="btn btn-info" onclick="history.go(-1)" >
+                    <button type="submit" class="btn btn-info" >Enviar</button>
+                </th>
+            </tr>
+        </form>
+    </table>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}" >
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+body,html{
+    height: 50%;
+    margin: 0;
+    /* background-color:  #f0f0f0; */
+}
+
+
+.img1{
+    background-image: url("../images/erros.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: transparent\9;
+    /* background-attachment: ; */
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fornecedores</title>
+    <link rel="shortcut icon" href="../static/images/img3.png" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <style>
+        body{background-color:#363636;}
+    </style>
+</head>
+<body>
+    <h1 align='center' class='text-white'>Fornecedores</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>Empresa</th>
+                <th>Endereço</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Prazo médio de entrega</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for info in fornecedores %}
+            <tr>
+                <td>{{info.empresa}}</td>
+                <td>{{info.endereco}}</td>
+                <td>{{info.email}}</td>
+                <td>{{info.telefone}}</td>
+                <td>{{info.prazo_entrega}}</td>
+                
+                <td>
+                    <a href="/edit_fornecedores/{{info.id}}"><img src="{{ url_for('static', filename='images/pencil.png')}}" alt="falhou"></a>
+                    <a href="/deletar_fornecedor/{{info.id}}"><img src="{{ url_for('static', filename='images/lixeira.png')}}" alt="falhou"></a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <th colspan="2">
+        <button onclick="window.location.href='/indexprinc'" class="btn btn-info">Voltar</button>
+        <button onclick="window.location.href='/add_fornecedores'"  class="btn btn-info"  >Incluir</button>
+    </th>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}" >
+    </script>
+    
+</body>
+</html>

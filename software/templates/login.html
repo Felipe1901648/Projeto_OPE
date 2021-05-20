@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="../static/images/img1.png" />
+    <link rel="stylesheet" href="../static/css/b7.css">
+</head>
+<body class="bgfun">
+    <form class="form" method="POST">
+        {{ form.csrf_token }}
+        <div class="card">
+            <div class="card-top">
+                <img class="img1" src="../static/images/mech.png" alt="Foto">
+                <h2 class="titulo">ROCHESTER</h2>
+                <h6 class="ptt" >GERENCIAR SEU NEGOCIO</h6>
+            </div>
+
+            <div class="card-group">
+                <label id="box"> Login</label>
+                {{ form.login(placeholder='Digite seu Login') }}
+            </div>
+
+            <div class="card-group">
+                <label id="box"> Senha </label>
+                {{ form.senha }}
+            </div>
+            
+            <div class="card-group">
+                <button type="submit"> Entrar </button>
+            </div>
+
+            <div class="card-group2">
+                <button><a href="/add_cadastro" style="text-decoration:none" > Cadastre-se </a> </button>
+            </div>
+
+        </div>
+    </body>
+</html>

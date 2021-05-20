@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="shortcut icon" href="../static/images/iconprod.png" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <style>
+        body{background-color:#363636;}
+    </style>
+</head>
+<body>
+    <h1 align='center' class='text-white'>Lista de Produtos</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>Descrição do Produto</th>
+                <th>Unidades</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in clientes %}
+            <tr>
+                <td>{{c.descricao}}</td>
+                <td>{{c.unidades}}</td>
+                <td>{{c.valor}}</td>
+                <td>
+                    <a href="/edit/{{c.id}}"><img src="{{ url_for('static', filename='images/pencil.png')}}" alt="falhou"></a>
+                    <a href="/delete/{{c.id}}"><img src="{{ url_for('static', filename='images/lixeira.png')}}" alt="falhou"></a>
+                </td>
+            </tr>
+            {% endfor %}   
+        </tbody>          
+    </table>
+    <th colspan="2">
+        <button onclick="window.location.href='/indexprinc'" class="btn btn-info">Voltar</button>
+        <button onclick="window.location.href='/add'"  class="btn btn-info"  >Incluir</button>
+    </th>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}" >
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/images/lapis.png" />
+    <title>Alteração do Produto </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <style>
+        body{background-color:#363636;}
+    </style>
+</head>
+<body>
+    <h1 align='center' class='text-white'>Editar Produto: {{cliente.descricao}}</h1>
+
+    <table class="table table-dark" >
+        <form action="/edit/{{cliente.id}}" method="POST">
+            <tr>
+                <td>Descrição do Produto</td>
+                <td><input type="text" name="descricao" value="{{cliente.descricao}}" />
+                </td>
+            </tr>
+            <tr>
+                <td>Unidades</td>
+                <td><input type="text" name="unidades" value="{{cliente.unidades}}" />
+                </td>
+            </tr>
+            <tr>
+                <td>Valor do Produto</td> 
+                <td><input type="text" name="valor" value="{{cliente.valor}}" />
+                </td>
+            </tr>        
+            <br />
+            <tr>
+                <th colspan="2">
+                    <input type='button' value="Voltar" class="btn btn-info" onclick="history.go(-1)" >
+                    <button type="submit" class="btn btn-info" >Enviar</button>
+                </th>
+            </tr>
+        </form>
+    </table>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}" >
+    </script>
+</body>
+</html>

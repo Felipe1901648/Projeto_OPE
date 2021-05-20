@@ -1,0 +1,13 @@
+.imgs{
+    width: 33%;
+    display: inline-block;
+}
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+h3 {
+    color: green;
+    text-align: center;
+}

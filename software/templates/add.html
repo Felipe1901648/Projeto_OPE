@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto</title>
+    <link rel="shortcut icon" href="../static/images/image1.png" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <style>
+        body{background-color:#363636;}
+    </style>
+</head>
+<body>
+    <h1 align='center' class='text-white'>Cadastrar Produto</h1>
+
+<table border="1" class="table table-striped table-dark">
+    <form action="/add" class="container" method="POST">
+        <tr>
+            <td>Descriçao do Produto</td>
+            <td><input type="text" name="descricao" required />
+            </td>
+        </tr>
+        <tr>
+            <td>Quantas Unidades </td> 
+            <td><input type="text" name="unidades" id="complemento" required />
+            </td>
+        </tr>
+        <tr>
+            <tr>
+                <td>Valor do Produto</td>
+                <td><input type="text" name="valor" id="email" required />
+                </td>
+            </tr>
+            <th colspan="2">
+                <input type='button' value="Voltar" class="btn btn-info" onclick="history.go(-1)" >
+                <button type="submit" class="btn btn-info" >Enviar</button>
+            </th>
+        </tr>
+    </form>
+</table>
+
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}" >
+    </script>
+</body>
+</html>

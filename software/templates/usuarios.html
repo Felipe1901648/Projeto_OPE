@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+    <link rel="shortcut icon" href="../static/images/img4.png" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <style>
+        body{background-color:#363636;}
+    </style>
+</head>
+<body>
+    <h1 align='center' class='text-white'>Lista de Usuários</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Login</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for info in usuarios %}
+            <tr>
+                <td>{{ info.nome }}</td>
+                <td>{{ info.login }}</td>
+                <td>{{ info.endereco }}</td>
+                <td>{{ info.telefone }}</td>
+                <td>
+                    
+                    <a href="/edit_usuarios/{{info.id}}"><img src="{{ url_for('static', filename='images/pencil.png')}}" alt="falhou"></a>
+                    <a href="/deletar_cadastro/{{info.id}}"><img src="{{ url_for('static', filename='images/lixeira.png')}}" alt="falhou"></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <th colspan="2">
+        <input type='button' value="Voltar" class="btn btn-info" onclick="window.location.href='/indexprinc'" >
+    </th>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}" >
+    </script>
+</body>
+</html>
