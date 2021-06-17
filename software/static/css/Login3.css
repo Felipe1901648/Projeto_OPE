@@ -1,7 +1,7 @@
 body,html{
     height: 100%;
     margin: 0;
-    /* background-color:  #f0f0f0; */
+    
 }
 
 .bgfun{
@@ -10,7 +10,7 @@ body,html{
     background-size: cover;
     background-position: center;
     background: transparent\9;
-    /* background-attachment: ; */
+   
 }
 
 .form{
@@ -48,7 +48,7 @@ body,html{
 
 .card-group > input{
     border-radius: 5px;
-    outline: 0;  /*Utilizado para remover a aparencia azul no clique*/
+    outline: 0;  
     width: 100%;
     height: 30px;
     padding: 10px;
@@ -56,7 +56,7 @@ body,html{
 }
 .card-group2 > input{
     border-radius: 5px;
-    outline: 0;  /*Utilizado para remover a aparencia azul no clique*/
+    outline: 0;  
     width: 100%;
     height: 30px;
     padding: 10px;
@@ -66,12 +66,12 @@ body,html{
 .card-group > label{
     width: 100%;
     color: gray;
-    display: block;  /*Utilizado para quebrar a linha do input */
+    display: block;  
 }
 .card-group2 > label{
     width: 100%;
     color: gray;
-    display: block;  /*Utilizado para quebrar a linha do input */
+    display: block; 
 }
 
 .card-group > button{
@@ -86,7 +86,7 @@ body,html{
 
 .card-group2 > button{
     color:white;
-    /* background-color: gray; */
+    
     width: 100%;
     padding: 10px;
     border: 0px;

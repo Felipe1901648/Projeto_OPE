@@ -16,7 +16,7 @@ dia = tempo.strftime('%d/%m/%Y')
 
 
 class Produtos(db.Model):
-    __tablename__ = 'Produtos_001'
+    __tablename__ = 'Produtos'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     descricao = db.Column(db.String(100))
     unidades = db.Column(db.Integer())
@@ -30,14 +30,14 @@ class Produtos(db.Model):
 
 
 class Cadastro(db.Model):
-    __tablename__ = 'Cadastro_002'
+    __tablename__ = 'Cadastro'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    nome = db.Column(db.String(30))
+    nome = db.Column(db.String(100))
     telefone = db.Column(db.String(13))
     login = db.Column(db.String(20))
     senha = db.Column(db.String(20))
     endereco =  db.Column(db.String(60))
-    numero_casa =  db.Column(db.Integer())
+    numero_casa =  db.Column(db.String(10))
 
     def __init__(self, nome, telefone, login, senha, endereco, numero_casa):
         self.nome = nome
@@ -48,10 +48,10 @@ class Cadastro(db.Model):
         self.numero_casa = numero_casa
 
 class Movimentacao(db.Model):
-    __tablename__ = 'Movimentacao_004'
+    __tablename__ = 'Movimentacao'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    usuario = db.Column(db.String(30))
-    descricao = db.Column(db.String(100))
+    usuario = db.Column(db.String(100))
+    descricao = db.Column(db.String(200))
     quantidade =  db.Column(db.Integer())
     data = db.Column(db.String(10))
     hora = db.Column(db.String(5))
@@ -66,7 +66,7 @@ class Movimentacao(db.Model):
         self.valor = valor
 
 class Fornecedores(db.Model):
-    __tablename__ = 'Fornecedores_001'
+    __tablename__ = 'Fornecedores'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     empresa = db.Column(db.String(100))
     endereco = db.Column(db.String(100))
@@ -100,6 +100,7 @@ def login():
                     navegador = make_response(redirect("indexprinc"))
                     navegador.set_cookie('login', info.nome, samesite = "Strict")
                     return navegador
+        return render_template("logerror.html", form=form)
     session['username'] = False
     return render_template("login.html", form=form)
 
@@ -173,7 +174,7 @@ def add():
         hora = tempo.strftime('%H:%M')
         dia = tempo.strftime('%d/%m/%Y')
         cliente = Produtos(request.form['descricao'], request.form['unidades'], request.form['valor'])
-        movimentos = Movimentacao(f'{user} adicionou', request.form['descricao'], request.form['unidades'], dia, hora, request.form['valor'])
+        movimentos = Movimentacao(f'{user} - adicionou', request.form['descricao'], request.form['unidades'], dia, hora, request.form['valor'])
         db.session.add(cliente)
         db.session.add(movimentos)
         db.session.commit()
@@ -219,7 +220,7 @@ def edit(id):
         tempo = datetime.now()
         hora = tempo.strftime('%H:%M')
         dia = tempo.strftime('%d/%m/%Y')
-        movimentos = Movimentacao(f'{user} alterou', '{0} para {1}' .format(cliente.descricao, request.form['descricao']), request.form['unidades'], dia, hora, '{0} para {1}' .format(cliente.valor, request.form['valor']))
+        movimentos = Movimentacao(f'{user} - alterou', '{0} para {1}' .format(cliente.descricao, request.form['descricao']), request.form['unidades'], dia, hora, '{0} para {1}' .format(cliente.valor, request.form['valor']))
         db.session.add(movimentos)
         cliente.descricao = request.form['descricao']
         cliente.unidades = request.form['unidades']
@@ -255,7 +256,7 @@ def delete(id):
     if session['username'] == False:
         return render_template('autenticado.html')
     cliente = Produtos.query.get(id)
-    movimentos = Movimentacao(f'{user} removeu', cliente.descricao, cliente.unidades, dia, hora, cliente.valor)
+    movimentos = Movimentacao(f'{user} - removeu', cliente.descricao, cliente.unidades, dia, hora, cliente.valor)
     db.session.delete(cliente)
     db.session.add(movimentos)
     db.session.commit()

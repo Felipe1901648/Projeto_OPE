@@ -17,17 +17,17 @@
         <form action="/edit/{{cliente.id}}" method="POST">
             <tr>
                 <td>Descrição do Produto</td>
-                <td><input type="text" name="descricao" value="{{cliente.descricao}}" />
+                <td><input type="text" name="descricao" value="{{cliente.descricao}}" maxlength="99" />
                 </td>
             </tr>
             <tr>
                 <td>Unidades</td>
-                <td><input type="text" name="unidades" value="{{cliente.unidades}}" />
+                <td><input type="number" name="unidades" value="{{cliente.unidades}}" maxlength="5"/>
                 </td>
             </tr>
             <tr>
                 <td>Valor do Produto</td> 
-                <td><input type="text" name="valor" value="{{cliente.valor}}" />
+                <td><input type="text" name="valor" value="{{cliente.valor}}" maxlength="6"/>
                 </td>
             </tr>        
             <br />

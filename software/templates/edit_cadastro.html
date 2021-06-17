@@ -17,24 +17,29 @@
         <form action="/edit_usuarios/{{usuarios.id}}" method="POST">
             <tr>
                 <td>Nome</td>
-                <td><input type="text" name="nome" value="{{usuarios.nome}}" />
+                <td><input type="text" name="nome" value="{{usuarios.nome}}" maxlength="75" />
                 </td>
             </tr>
             <tr>
                 <td>Login</td>
-                <td><input type="text" name="login" value="{{usuarios.login}}" />
+                <td><input type="text" name="login" value="{{usuarios.login}}" maxlength="19" />
                 </td>
             </tr>
             <tr>
-                <td>Endereco</td> 
-                <td><input type="text" name="endereco" value="{{usuarios.endereco}}" />
+                <td>Endereço</td> 
+                <td><input type="text" name="endereco" value="{{usuarios.endereco}}" maxlength="59" />
+                </td>
+            </tr>
+            <tr>
+                <td>Numero da Casa</td> 
+                <td><input type="text" name="numero_casa" value="{{usuarios.numero_casa}}" maxlength="9" />
                 </td>
             </tr>
             <tr>
                 <td>Telefone</td> 
-                <td><input type="text" name="telefone" value="{{usuarios.telefone}}" />
+                <td><input type="text" name="telefone" value="{{usuarios.telefone}}" maxlength="13" />
                 </td>
-            </tr>        
+            </tr>
             <br />
             <tr>
                 <th colspan="2">

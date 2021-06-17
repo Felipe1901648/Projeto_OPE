@@ -17,28 +17,28 @@
     <form action="/add_fornecedores" class="container" method="POST">
         <tr>
             <td>Razão social</td>
-            <td><input type="text" name="empresa" required />
+            <td><input type="text" name="empresa" placeholder="Nome da empresa" maxlength="99" required />
             </td>
         </tr>
         <tr>
             <td>Endereço </td> 
-            <td><input type="text" name="endereco" id="complemento" required />
+            <td><input type="text" name="endereco" id="complemento" placeholder="Digite o endereço" maxlength="99" required />
             </td>
         </tr>
         <tr>
         <tr>
             <td>Email</td>
-            <td><input type="email" name="email" id="email" required />
+            <td><input type="email" name="email" id="email" placeholder="Digite o email" maxlength="49" required />
             </td>
         </tr>
         <tr>
             <td>Telefone</td>
-            <td><input type="text" name="contato" id="email" required />
+            <td><input type="text" name="contato" id="email" maxlength="13" pattern="[0-9-(-)]+$" placeholder="(99)999999999" required />
             </td>
         </tr>
         <tr>
             <td>Prazo médio de entrega</td>
-            <td><input type="text" name="entrega" id="email" required />
+            <td><input type="text" name="entrega" id="email" placeholder="Prazo" maxlength="39" required />
             </td>
         </tr>
 

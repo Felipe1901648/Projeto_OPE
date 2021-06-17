@@ -1,7 +1,7 @@
 body,html{
     height: 50%;
     margin: 0;
-    /* background-color:  #f0f0f0; */
+
 }
 
 
@@ -11,5 +11,5 @@ body,html{
     background-size: cover;
     background-position: center;
     background: transparent\9;
-    /* background-attachment: ; */
+ 
 }

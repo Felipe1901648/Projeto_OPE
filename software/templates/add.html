@@ -17,18 +17,18 @@
     <form action="/add" class="container" method="POST">
         <tr>
             <td>Descriçao do Produto</td>
-            <td><input type="text" name="descricao" required />
+            <td><input type="text" name="descricao" maxlength="99" placeholder="Produto" required />
             </td>
         </tr>
         <tr>
             <td>Quantas Unidades </td> 
-            <td><input type="text" name="unidades" id="complemento" required />
+            <td><input type="number" name="unidades" id="complemento" maxlength="5" placeholder="Quantidade" required />
             </td>
         </tr>
         <tr>
             <tr>
                 <td>Valor do Produto</td>
-                <td><input type="text" name="valor" id="email" required />
+                <td><input type="text" name="valor" id="email" maxlength="6" pattern="[0-9-.]+$" placeholder="00.00" required />
                 </td>
             </tr>
             <th colspan="2">

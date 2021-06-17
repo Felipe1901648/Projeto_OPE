@@ -17,33 +17,33 @@
     <form action="/add_cadastro" class="container" method="POST">
         <tr>
             <td>Nome Completo</td>
-            <td><input type="text" name="nome" />
+            <td><input type="text" name="nome" maxlength="75" placeholder="Digite seu nome"/>
             </td>
         </tr>
         <tr>
             <td>Telefone </td> 
-            <td><input type="text" name="telefone" id="complemento" required />
+            <td><input type="text" name="telefone" id="complemento" pattern="[0-9-(-)]+$" maxlength="13" placeholder="(99)999999999" required />
             </td>
         </tr>
         <tr>
         <tr>
             <td>Login</td>
-            <td><input type="text" name="login" id="email" required />
+            <td><input type="text" name="login" id="email" placeholder="Digite seu login" maxlength="19" required />
             </td>
         </tr>
         <tr>
             <td>Senha</td>
-            <td><input type="password" name="senha" id="email" required />
+            <td><input type="password" name="senha" id="email" minlength="6" maxlength="19" placeholder="Minimo 6 digitos" required />
             </td>
         </tr>
         <tr>
             <td>Endereço</td>
-            <td><input type="text" name="endereco" id="email" required />
+            <td><input type="text" name="endereco" id="email" placeholder="Digite seu endereço" maxlength="59" required />
             </td>
         </tr>
         <tr>
             <td>Numero da Casa</td>
-            <td><input type="text" name="numero_casa" id="email" required />
+            <td><input type="text" name="numero_casa" id="email" maxlength="9" placeholder="Digite o numero da casa" required />
             </td>
         </tr>
 
